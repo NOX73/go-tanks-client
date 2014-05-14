@@ -2,59 +2,59 @@ package client
 
 type Message struct {
 	Type    string
-	Message string
+	Message string `json:",omitempty"`
 
 	//Auth
-	Login    string
-	Password string
+	Login    string `json:",omitempty"`
+	Password string `json:",omitempty"`
 
 	//TankCommand
-	LeftMotor  float64
-	RightMotor float64
-	Gun        Gun
-	Fire       bool
+	LeftMotor  float64 `json:",omitempty"`
+	RightMotor float64 `json:",omitempty"`
+	Gun        *Gun    `json:",omitempty"`
+	Fire       bool    `json:",omitempty"`
 
 	//Tank
-	Tank Tank
+	Tank *Tank `json:",omitempty"`
 
 	//World
-	Tanks []Tank
-	Map   Map
+	Tanks []Tank `json:",omitempty"`
+	Map   *Map   `json:",omitempty"`
 
 	//Client
-	WorldFrequency int64
+	WorldFrequency int64 `json:",omitempty"`
 
 	//Ping
-	PingId int64
+	PingId int64 `json:",omitempty"`
 }
 
 type Map struct {
-	Width  int64
-	Height int64
+	Width  int64 `json:",omitempty"`
+	Height int64 `json:",omitempty"`
 }
 
 type Tank struct {
-	Id int64
+	Id int64 `json:",omitempty"`
 
-	Coords Coords
-	Gun    Gun
+	Coords Coords `json:",omitempty"`
+	Gun    Gun    `json:",omitempty"`
 
-	Direction  float64
-	LeftMotor  float64
-	RightMotor float64
+	Direction  float64 `json:",omitempty"`
+	LeftMotor  float64 `json:",omitempty"`
+	RightMotor float64 `json:",omitempty"`
 
-	Radius int64
-	Health int64
+	Radius int64 `json:",omitempty"`
+	Health int64 `json:",omitempty"`
 }
 
 type Coords struct {
-	X int64
-	Y int64
+	X int64 `json:",omitempty"`
+	Y int64 `json:",omitempty"`
 }
 
 type Gun struct {
-	Direction      float64
-	ReloadProgress float64
-	Temperature    float64
-	TurnAngle      float64
+	Direction      float64 `json:",omitempty"`
+	ReloadProgress float64 `json:",omitempty"`
+	Temperature    float64 `json:",omitempty"`
+	TurnAngle      float64 `json:",omitempty"`
 }

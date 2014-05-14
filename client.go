@@ -58,7 +58,7 @@ func (c *client) Ping(id int64) error {
 }
 
 func (c *client) TurnGun(angle float64) error {
-	return c.SendTankCommand(Message{Gun: Gun{TurnAngle: angle}})
+	return c.SendTankCommand(Message{Gun: &Gun{TurnAngle: angle}})
 }
 
 func (c *client) Motors(left, right float64) error {
