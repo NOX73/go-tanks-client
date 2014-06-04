@@ -48,8 +48,8 @@ type Tank struct {
 }
 
 type Coords struct {
-	X int64 `json:",omitempty"`
-	Y int64 `json:",omitempty"`
+	X float64 `json:",omitempty"`
+	Y float64 `json:",omitempty"`
 }
 
 type Gun struct {
