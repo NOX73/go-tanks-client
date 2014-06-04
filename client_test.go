@@ -66,6 +66,7 @@ func TestAuth(t *testing.T) {
 	message, err = c.ReadMessage()
 	assert.NoError(t, err)
 	assert.Equal(t, "Tank", message.Type, "type should be 'Tank'")
+	assert.Equal(t, true, message.IsTank(), "IsTank should be true")
 	assert.NotNil(t, message.Tank, "Tank in TankMessage should not be nil")
 	assert.Equal(t, message.Tank.Id, 4035, "Tank.Id in TankMessage wrong")
 
