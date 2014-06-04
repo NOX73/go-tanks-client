@@ -78,3 +78,7 @@ func (m Message) TurnGun(angle float64) Message {
 	m.Gun = &Gun{TurnAngle: angle}
 	return m
 }
+
+func (m Message) IsWorld() bool {
+	return m.Type == "World"
+}

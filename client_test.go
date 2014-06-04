@@ -72,6 +72,7 @@ func TestAuth(t *testing.T) {
 	message, err = c.ReadMessage()
 	assert.NoError(t, err)
 	assert.Equal(t, "World", message.Type, "type should be 'World'")
+	assert.Equal(t, true, message.IsWorld(), "IsWorld should be true")
 	assert.NotNil(t, message.Map, "Map in WorldMessage should not be nil")
 	assert.Equal(t, 1024, message.Map.Width, "Map.Width should be 1024")
 	assert.Equal(t, 768, message.Map.Height, "Map.Height should be 768")
