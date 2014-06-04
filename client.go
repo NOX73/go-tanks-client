@@ -17,6 +17,8 @@ type Client interface {
 	Ping(id int64) error
 
 	Disconnect() error
+
+	SendTankCommand(Message) error
 }
 
 type client struct {

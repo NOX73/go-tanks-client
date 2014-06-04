@@ -83,3 +83,19 @@ func TestAuth(t *testing.T) {
 
 	c.Disconnect()
 }
+
+func TestMessage(t *testing.T) {
+	m := NewMessage()
+
+	left := 21.0
+	right := 31.0
+
+	angle := 324.0
+
+	m = m.Motors(left, right).SetFire().TurnGun(angle)
+
+	assert.Equal(t, left, m.LeftMotor)
+	assert.Equal(t, right, m.RightMotor)
+	assert.Equal(t, true, m.Fire)
+	assert.Equal(t, angle, m.Gun.TurnAngle)
+}

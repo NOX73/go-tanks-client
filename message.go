@@ -58,3 +58,23 @@ type Gun struct {
 	Temperature    float64 `json:",omitempty"`
 	TurnAngle      float64 `json:",omitempty"`
 }
+
+func NewMessage() Message {
+	return Message{}
+}
+
+func (m Message) Motors(left, right float64) Message {
+	m.LeftMotor = left
+	m.RightMotor = right
+	return m
+}
+
+func (m Message) SetFire() Message {
+	m.Fire = true
+	return m
+}
+
+func (m Message) TurnGun(angle float64) Message {
+	m.Gun = &Gun{TurnAngle: angle}
+	return m
+}
