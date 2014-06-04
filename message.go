@@ -82,3 +82,7 @@ func (m Message) TurnGun(angle float64) Message {
 func (m Message) IsWorld() bool {
 	return m.Type == "World"
 }
+
+func (m Message) IsTank() bool {
+	return m.Type == "Tank"
+}
