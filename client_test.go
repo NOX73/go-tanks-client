@@ -83,6 +83,9 @@ func TestAuth(t *testing.T) {
 	assert.Equal(t, 0, message.Tanks[0].Gun.Direction, "First Tank direction should be 0")
 	assert.Equal(t, 860, message.Tanks[0].Coords.X)
 
+	tank := message.GetTankById(4034)
+	assert.Equal(t, 4034, tank.Id, "finded tank should has same ID")
+
 	c.Disconnect()
 }
 

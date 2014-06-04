@@ -86,3 +86,14 @@ func (m Message) IsWorld() bool {
 func (m Message) IsTank() bool {
 	return m.Type == "Tank"
 }
+
+func (m Message) GetTankById(id int64) *Tank {
+
+	for _, tank := range m.Tanks {
+		if tank.Id == id {
+			return &tank
+		}
+	}
+
+	return nil
+}
